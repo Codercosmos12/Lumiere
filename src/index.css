@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 30 10% 15%;
+
+    --card: 40 30% 97%;
+    --card-foreground: 30 10% 15%;
+
+    --popover: 40 33% 98%;
+    --popover-foreground: 30 10% 15%;
+
+    --primary: 30 80% 45%;
+    --primary-foreground: 40 33% 98%;
+
+    --secondary: 35 25% 90%;
+    --secondary-foreground: 30 10% 20%;
+
+    --muted: 35 20% 93%;
+    --muted-foreground: 30 10% 45%;
+
+    --accent: 30 80% 45%;
+    --accent-foreground: 40 33% 98%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 35 20% 88%;
+    --input: 35 20% 88%;
+    --ring: 30 80% 45%;
+
+    --radius: 0.5rem;
+
+    /* Custom tokens */
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Inter', sans-serif;
+    
+    --gradient-warm: linear-gradient(135deg, hsl(30 80% 45%) 0%, hsl(35 70% 55%) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(40 33% 98%) 0%, hsl(35 25% 94%) 100%);
+    
+    --shadow-soft: 0 4px 20px -4px hsl(30 20% 20% / 0.08);
+    --shadow-elevated: 0 12px 40px -8px hsl(30 20% 20% / 0.12);
+    --shadow-card: 0 2px 12px -2px hsl(30 20% 20% / 0.06);
+
+    --sidebar-background: 40 30% 97%;
+    --sidebar-foreground: 30 10% 25%;
+    --sidebar-primary: 30 80% 45%;
+    --sidebar-primary-foreground: 40 33% 98%;
+    --sidebar-accent: 35 25% 92%;
+    --sidebar-accent-foreground: 30 10% 20%;
+    --sidebar-border: 35 20% 88%;
+    --sidebar-ring: 30 80% 45%;
+  }
+
+  .dark {
+    --background: 30 15% 8%;
+    --foreground: 40 20% 95%;
+
+    --card: 30 15% 10%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 30 15% 10%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 32 85% 55%;
+    --primary-foreground: 30 15% 8%;
+
+    --secondary: 30 12% 18%;
+    --secondary-foreground: 40 20% 90%;
+
+    --muted: 30 12% 18%;
+    --muted-foreground: 35 15% 60%;
+
+    --accent: 32 85% 55%;
+    --accent-foreground: 30 15% 8%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 12% 20%;
+    --input: 30 12% 20%;
+    --ring: 32 85% 55%;
+
+    --sidebar-background: 30 15% 10%;
+    --sidebar-foreground: 40 20% 90%;
+    --sidebar-primary: 32 85% 55%;
+    --sidebar-primary-foreground: 30 15% 8%;
+    --sidebar-accent: 30 12% 15%;
+    --sidebar-accent-foreground: 40 20% 90%;
+    --sidebar-border: 30 12% 18%;
+    --sidebar-ring: 32 85% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  .heading-display {
+    @apply text-5xl md:text-7xl font-medium tracking-tight;
+    font-family: var(--font-heading);
+  }
+
+  .heading-section {
+    @apply text-3xl md:text-4xl font-medium tracking-tight;
+    font-family: var(--font-heading);
+  }
+
+  .text-body {
+    @apply text-base leading-relaxed;
+    font-family: var(--font-body);
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-8 py-3 font-medium tracking-wide transition-all duration-300 hover:opacity-90;
+  }
+
+  .btn-outline {
+    @apply border border-foreground/20 px-8 py-3 font-medium tracking-wide transition-all duration-300 hover:bg-foreground hover:text-background;
+  }
+
+  .card-product {
+    @apply relative overflow-hidden bg-card transition-all duration-500;
+  }
+
+  .card-product:hover {
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

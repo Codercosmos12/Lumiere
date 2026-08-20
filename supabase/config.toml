@@ -1,0 +1,16 @@
+project_id = "qtrdqeuaexcyuibcbszp"
+
+[functions.create-checkout-session]
+verify_jwt = false
+
+[functions.create-cod-order]
+verify_jwt = false
+
+[functions.stripe-webhook]
+verify_jwt = false
+
+[functions.get-order]
+verify_jwt = false
+
+[functions.send-order-confirmation]
+verify_jwt = false
